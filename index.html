@@ -2,29 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HREXT07 R00lz!</title>
+  <title>Task App</title>
   <script
           src="https://code.jquery.com/jquery-3.3.1.js"
           integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-          crossorigin="anonymous"></script>
+          crossorigin="anonymous">
+
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
   <script src="app/app.js"></script>
   <link rel="stylesheet" href="css/style.css">
-
-
-  <!--
-
-√ create container
-√ create button
-√ input field
-√ container to display text
-√ update button(or maybe click on the container item)
-√ delete button
-container for the response-feedback (start with alert)
--->
 </head>
+
 <body>
 
+<header>To-Do List</header>
+  <div class="button-container">
+  </div>
+
+  <div class="project-container">
+  </div>
+
+  <div class="task-container">
+    <div type="button" class="clear-selected">Clear selected</div>
+    <div type="buttom" class="clear-all">Clear all task</div>
+  </div>
+
+</body>
+</html>
+
+<!--
 <div class="container-main">
   <header>My Cruddy App</header>
   <div class="container-form">
@@ -36,7 +43,4 @@ container for the response-feedback (start with alert)
     <button class="btn-clear">Clear</button>
   </div>
   <div class="container-data"></div>
-</div>
-
-</body>
-</html>
+</div> -->
