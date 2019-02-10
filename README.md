@@ -1,7 +1,7 @@
 # hrext07-my-cruddy-app
 Create Read Update and Delete framework using JS
 
-## Johns crude app ##
+## Johns cruddy app ##
 ## Tasks
 
 ### Basic Reqs
@@ -15,21 +15,20 @@ Create Read Update and Delete framework using JS
 - [ ] Item that I added goes here...
 
 
-## Daniel's crude app ##
+## Daniel's cruddy app ##
 
-Hangman Game
+To-do list with drag capability
 ## Basic Reqs
-- [ ] Storing user input/guesses (localstorage)
-- [ ] Comparing user input to answer (input.value vs value in localstorage)
-- [ ] Display correct guesses in word container
-- [ ] Display wrong guesses in word container
-- [ ] Container for alphabet bank
-- [ ] Modify alphabet bank based on user guesses
-- [ ] Pop-up for winning or losing
+- [ ] Storing tasks data(localstorage)
+- [ ] Display tasks in container(value in localstorabge)
+- [ ] Modifying data (update, clear single task, clear list)
+- [ ] Adding additional list (container)
+- [ ] Drag-and-drop UI (use api?)
 
 ## Advanced Stuff
-- [ ] Animate hang man visuals for correct and incorrect guesses
-- [ ] Possible use d3 to make hangman ui?
+- [ ] Add a user login page
+- [ ] Store user login data to identify unique data (use free third party authentication server?)
+
 
 
 
