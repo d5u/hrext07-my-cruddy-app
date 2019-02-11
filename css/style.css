@@ -1,0 +1,46 @@
+header {
+	font-size: 40px;
+	display: flex;
+	justify-content: center;
+
+}
+.button-container {
+	display: flex;
+	justify-content: center;
+}
+
+.main-container {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
+.project-container {
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+	border: solid black 2px;
+	height: 500px;
+	width: 300px;
+	max-height: 500px;
+	max-width: 300px;
+	float: left;
+}
+
+.task-container {
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+	border: solid black 2px;
+	height: 500px;
+	width: 300px;
+	max-height: 500px;
+	max-width: 300px;
+	float: right;
+}
+
+.task-btn {
+	display: flex;
+	justify-content: center;
+	float: right;
+	margin: 10px;
+}
