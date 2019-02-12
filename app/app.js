@@ -2,9 +2,11 @@ $(document).ready(function(){
 var $maincontainer = $(".main-container");
 
 $('.btn-addtask').on('click', function(c) {
-  $($maincontainer).append("<div>Hello</div>");
+  var id = $(".task-input").val();
+  var task = $(".task-input").val();
+  localStorage.setItem(id, task);
+  $(".task-input").val("");
   });
-
 });
 
 
