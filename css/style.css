@@ -1,20 +1,18 @@
-header {
+/*header {
 	font-size: 40px;
 	display: flex;
 	justify-content: center;
 
 }
-.button-container {
-	display: flex;
-	justify-content: center;
-}
-
+*/
 .main-container {
 	display: flex;
-	justify-content: center;
-	margin: 0 auto;
+	border: solid black 2px;
+	height: 500px;
+	width: 300px;
+	margin: 5px;
 }
-.project-container {
+/*.project-container {
 	display: flex;
 	justify-content: center;
 	margin: 10px;
@@ -24,6 +22,7 @@ header {
 	max-height: 500px;
 	max-width: 300px;
 	float: left;
+	position: relative;
 }
 
 .task-container {
@@ -36,11 +35,13 @@ header {
 	max-height: 500px;
 	max-width: 300px;
 	float: right;
+	position: relative;
 }
 
-.task-btn {
+.main-container .task-container .task-btn {
 	display: flex;
-	justify-content: center;
-	float: right;
-	margin: 10px;
-}
+	justify-content: flex-end;
+	position: relative;
+	bottom: 20px;
+	right: 20px;
+}*/
