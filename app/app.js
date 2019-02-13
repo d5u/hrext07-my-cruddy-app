@@ -1,13 +1,17 @@
 $(document).ready(function(){
 var $maincontainer = $(".main-container");
+var enter_key = 13;
 
-$('.btn-addtask').on('click', function(c) {
-  var id = $(".task-input").val();
-  var task = $(".task-input").val();
-  localStorage.setItem(id, task);
-  var displayTask = localStorage.getItem(task);
-  $(".main-container").append('<div class="display-data-item" data-task="' + task + '">' + task + '</div>');
-  $(".task-input").val("");
+
+$('.task-input').keypress(function(e) {
+  if (e.which == enter_key) {
+    var id = $(".task-input").val();
+    var task = $(".task-input").val();
+    localStorage.setItem(id, task);
+    var displayTask = localStorage.getItem(task);
+    $(".main-container").append('<div class="display-data-item" data-task="' + task + '">' + task + '</div>');
+    $(".task-input").val("");
+    }
   });
 });
 
