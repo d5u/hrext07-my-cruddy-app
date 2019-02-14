@@ -31,9 +31,15 @@ $(document).ready(function() {
     del.classList.add('del');
     del.innerHTML = delSVG;
 
+    // if delete button is clicked
+    del.addEventListener('click', delTask);
+
     var completed = document.createElement('button');
     completed.classList.add('completed');
     completed.innerHTML = completedSVG;
+
+    // if complete button is clicked
+    completed.addEventListener('click', completedTask);
 
     buttons.appendChild(del);
     buttons.appendChild(completed);
@@ -42,5 +48,22 @@ $(document).ready(function() {
     list.insertBefore(item, list.childNodes[0]);
   };
 
+  //delete task function
+  var delTask = function() {
+    var item = this.parentNode.parentNode;
+    var parent = item.parentNode;
+
+    parent.removeChild(item);
+  };
+
+  var completedTask = function () {
+    var item = this.parentNode.parentNode;
+    var parent = item.parentNode;
+    var id = parent.id;
+    var target = (id === 'task') ? document.getElementById('completed') : document.getElementById('task');
+
+    parent.removeChild(item);
+    target.insertBefore(item, target.childNodes[0]);
+  };
 });
 
