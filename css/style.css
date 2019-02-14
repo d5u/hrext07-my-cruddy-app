@@ -3,15 +3,20 @@
 body {
 	background-size: cover;
 	background-attachment: fixed;
+	padding: 80px 0 0 0;
 }
 
 body, input, button {
 	font-family: "Roboto", sans-serif;
 }
 
+.noFill {
+	fill: none;
+}
+
 header {
 	width: 500px;
-	height: 500px;
+	height: 80px;
 	margin: 0 auto;
 	padding: 15px;
 	top: 0;
@@ -30,6 +35,8 @@ header input {
 	width: 500px;
 	height: 50px;
 	color: black;
+	margin-top: 18px;
+	margin-left: -16px;
 	font-size: 15px;
 	font-weight: 400;
 	text-indent: 18px;
@@ -44,3 +51,151 @@ header input {
   	-moz-appearance: none;
 }
 
+.container {
+	width: 650px;
+	padding: 150px 0 0 0;
+	margin: 0 auto;
+}
+
+ul.task {
+	width: 650px;
+}
+
+ul.task li {
+	width: 650px;
+	min-height: 50px;
+	font-size: 14px;
+	font-weight: 400px;
+	color: #444;
+	line-height: 22px;
+	background: #edf0f1;
+	border-radius: 5px;
+	position: relative;
+	box-shadow: 1px 1px 1px black, 0 0 25px grey, 0 0 5px black;
+	margin: 0 0 10px 0;
+	padding: 14px 100px 14px 14px;
+	word-break: break-word;
+}
+
+ul.task li:last-of-type {
+	margin: 0;
+}
+
+ul.task li .buttons {
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+ul.task li .buttons button {
+	width: 50px;
+	height: 50px;
+	background: none;
+	position: relative;
+	border: 0px;
+	box-shadow: none;
+	outline: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+ul.task li .buttons button:last-of-type:before {
+	content: '';
+	width: 1px;
+	height: 30px;
+	background: #edf0f1;
+
+	position: absolute;
+	top: 10px;
+	left: 0;
+}
+
+ul.task li .buttons button svg {
+  width: 22px;
+  height: 22px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: -11px 0 0 -11px;
+}
+
+ul.task li .buttons button.completed svg {
+  border-radius: 11px;
+  border: 1.5px solid #1e90ff;
+
+  transition: background 0.2s ease;
+}
+
+ul.task#completed li .buttons button.completed svg {
+  background: #1e90ff;
+  border: 0px;
+}
+
+ul.task:not(#completed) li .buttons button.completed:hover svg {
+  background: #1e90ff;
+}
+
+ul.task:not(#completed) li .buttons button.completed:hover svg .fill {
+  fill: #fff;
+}
+
+ul.task#completed li .buttons button.completed svg .fill {
+  fill: #fff;
+}
+
+ul.task li .buttons button svg .fill {
+  transition: fill 0.2s ease;
+}
+
+ul.task li .buttons button.del svg .fill {
+  fill: #c0cecb;
+}
+
+ul.task li .buttons button.del:hover svg .fill {
+  fill: #e85656;
+}
+
+ul.task li .buttons button.completed svg .fill {
+  fill: #1e90ff;
+}
+
+ul.task#completed {
+  position: relative;
+  padding: 60px 0 0 0;
+}
+
+ul.task#completed:before {
+  content: '';
+  width: 150px;
+  height: 1px;
+  background: #d8e5e0;
+
+  position: absolute;
+  top: 30px;
+  left: 50%;
+
+  margin: 0 0 0 -75px;
+}
+
+ul.task#task:empty:after {
+  content: 'no tasks have been assigned yet!';
+  margin: 15px 0 0 0;
+}
+
+ul.task#completed:empty:after {
+  content: 'no tasks have been completed yet!';
+}
+
+ul.task#task:after,
+ul.task#completed:after {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+}
