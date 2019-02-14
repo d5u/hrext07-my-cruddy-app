@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Task App</title>
-  <script
-          src="https://code.jquery.com/jquery-3.3.1.js"
-          integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-          crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
-  <script src="app/app.js"></script>
+
+  <!-- font pkg -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+
+  <!-- libs -->
+  <script src="lib/jquery.js"></script>
+
+  <!-- style -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body background="image/bg-img.jpg">
+    <!-- app title and input box -->
 
-<div id="main-container">
+      <header>
+        <h1>mytasks</h1>
+        <input type="text" id="task-input" placeholder="add a new task!" autofocus="">
+      </header>
 
-  <section class="todo-app">
-    <header class="header">
-      <h1>mytasks</h1>
-      <input type="text" class="task-input" placeholder="add a new task!" autofocus="">
-    </header>
-  </section>
+    <!-- task container -->
+    <div class="container">
+      <!-- tasks to complete-->
+      <ul class="task" id="task"></ul>
 
-  <div class="main-container">
-  </div>
+      <!-- completed tasks -->
+      <ul class="task" id="completed-tasks"></ul>
+    </div>
 
-</div>
-
+    <!-- js -->
+    <script src="app/app.js"></script>
 </body>
 </html>
