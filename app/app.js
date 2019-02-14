@@ -1,59 +1,46 @@
-$(document).ready(function(){
-var $maincontainer = $(".main-container");
-var enter_key = 13;
+$(document).ready(function() {
+//global variables
+  var enter_key = 13;
+
+  //buttons
+  var delSVG = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve"><rect class="noFill" width="22" height="22"/><g><g><path class="fill" d="M16.1,3.6h-1.9V3.3c0-1.3-1-2.3-2.3-2.3h-1.7C8.9,1,7.8,2,7.8,3.3v0.2H5.9c-1.3,0-2.3,1-2.3,2.3v1.3c0,0.5,0.4,0.9,0.9,1v10.5c0,1.3,1,2.3,2.3,2.3h8.5c1.3,0,2.3-1,2.3-2.3V8.2c0.5-0.1,0.9-0.5,0.9-1V5.9C18.4,4.6,17.4,3.6,16.1,3.6z M9.1,3.3c0-0.6,0.5-1.1,1.1-1.1h1.7c0.6,0,1.1,0.5,1.1,1.1v0.2H9.1V3.3z M16.3,18.7c0,0.6-0.5,1.1-1.1,1.1H6.7c-0.6,0-1.1-0.5-1.1-1.1V8.2h10.6V18.7z M17.2,7H4.8V5.9c0-0.6,0.5-1.1,1.1-1.1h10.2c0.6,0,1.1,0.5,1.1,1.1V7z"/></g><g><g><path class="fill" d="M11,18c-0.4,0-0.6-0.3-0.6-0.6v-6.8c0-0.4,0.3-0.6,0.6-0.6s0.6,0.3,0.6,0.6v6.8C11.6,17.7,11.4,18,11,18z"/></g><g><path class="fill" d="M8,18c-0.4,0-0.6-0.3-0.6-0.6v-6.8c0-0.4,0.3-0.6,0.6-0.6c0.4,0,0.6,0.3,0.6,0.6v6.8C8.7,17.7,8.4,18,8,18z"/></g><g><path class="fill" d="M14,18c-0.4,0-0.6-0.3-0.6-0.6v-6.8c0-0.4,0.3-0.6,0.6-0.6c0.4,0,0.6,0.3,0.6,0.6v6.8C14.6,17.7,14.3,18,14,18z"/></g></g></g></svg>';
+  var completedSVG = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve"><rect y="0" class="noFill" width="22" height="22"/><g><path class="fill" d="M9.7,14.4L9.7,14.4c-0.2,0-0.4-0.1-0.5-0.2l-2.7-2.7c-0.3-0.3-0.3-0.8,0-1.1s0.8-0.3,1.1,0l2.1,2.1l4.8-4.8c0.3-0.3,0.8-0.3,1.1,0s0.3,0.8,0,1.1l-5.3,5.3C10.1,14.3,9.9,14.4,9.7,14.4z"/></g></svg>';
 
 
-$('.task-input').keypress(function(e) {
-  if (e.which == enter_key) {
-    var id = $(".task-input").val();
-    var task = $(".task-input").val();
-    localStorage.setItem(id, task);
-    var displayTask = localStorage.getItem(task);
-    $(".main-container").append('<div class="display-data-item" data-task="' + task + '">' + task + '</div>');
-    $(".task-input").val("");
+  $("#task-input").keypress(function(e) {
+    if (e.which == enter_key) {
+      var value = document.getElementById('task-input').value;
+      if (value) {
+        addTask(value);
+        $("#task-input").val("");
+      }
     }
   });
+
+  //add task function
+  var addTask = function(text) {
+    var list = document.getElementById('task');
+
+    var item = document.createElement('li');
+    item.innerText = text;
+
+    var buttons = document.createElement('div');
+    buttons.classList.add('buttons');
+
+    var del = document.createElement('button');
+    del.classList.add('del');
+    del.innerHTML = delSVG;
+
+    var completed = document.createElement('button');
+    completed.classList.add('completed');
+    completed.innerHTML = completedSVG;
+
+    buttons.appendChild(del);
+    buttons.appendChild(completed);
+    item.appendChild(buttons);
+
+    list.insertBefore(item, list.childNodes[0]);
+  };
+
 });
 
-
-
-
-
-
-
-  // $('.btn-add').on('click', function(e){
-  //   console.log(e);
-  //   var keyData = $('.input-key').val();
-  //   var valueData = $('.input-value').val();
-  //   // write to db
-  //   localStorage.setItem(keyData, valueData);
-  //   // read from db
-  //   var displayText = keyData + ' | ' + localStorage.getItem(keyData);
-  //   // this only displays the last one? might want to switch to html
-  //   // and append a div
-  //   // <div class="display-data-item" data-keyValue="keyData">valueData</div>
-  //   // if you use backticks ` you can use ${templateLiterals}
-  //   // TODO make this vars make sense across the app
-  //   $('.container-data').html('<div class="display-data-item" data-keyValue="'+ keyData +'">'+valueData+'</div>');
-  //   $('.input-key').val('');
-  //   $('.input-value').val('');
-  // });
-
-
-//   // update db
-//     // need to expand when  more than 1 item is added
-
-//   // delete item
-//   $('.container-data').on('click', '.display-data-item', function(e){
-//     console.log(e.currentTarget.dataset.keyvalue);
-//     var keyData = e.currentTarget.dataset.keyvalue;
-//     localStorage.removeItem(keyData);
-//     $('.container-data').text('');
-//   });
-//   // delete all?
-//   $('.btn-clear').click(function(){
-//     localStorage.clear();
-//     $('.container-data').text('');
-//   });
-
-// });
