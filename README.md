@@ -9,6 +9,7 @@ Simple task keeper
 
 ## Advanced Stuff
 - [ ] Drag and drop api?
+- [ ] Edditable on click?
 
 
 

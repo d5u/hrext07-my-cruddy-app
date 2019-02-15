@@ -77,6 +77,10 @@ ul.task li {
 	word-break: break-word;
 }
 
+ul.task#completed li{
+	background: #8b9dc3;
+}
+
 ul.task li:last-of-type {
 	margin: 0;
 }

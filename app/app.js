@@ -107,5 +107,51 @@ $(document).ready(function() {
         addTask(value, true);
       }
   };
-load_data();
+  var grabTask = function () {
+    var value = this.innerText;
+  };
+
+  var editTask = function () {
+    var edit = this.innerText;
+    var tasksIndex = data.tasks.indexOf(value);
+    var completedIndex = data.tasks.indexOf(value);
+    if (data.tasks.includes(value)) {
+      data.tasks[tasksIndex] = edit;
+    } else {
+      data.completed[completedIndex] = edit;
+    }
+  };
+
+  load_data();
+
+  //edit not working T_T
+  $(".task").click(function() {
+    $(".task").attr('contentEditable',true);
+      grabTask();
+      $(".task").keypress(function(e) {
+        if(e.which == enter_key) {
+          $(".task").attr('contentEditable',false);
+          var edit = this.innerText;
+         editTask();
+        }
+      });
+  });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
